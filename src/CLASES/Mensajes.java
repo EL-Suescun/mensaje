@@ -7,7 +7,6 @@ public class Mensajes {
     int id_mensaje;
     String mensaje;
     String autor_mensaje;
-    String fecha_mensaje;
     
     //Constructor que nos va a servir por defecto
     public Mensajes() {
@@ -17,7 +16,6 @@ public class Mensajes {
     public Mensajes(String mensaje, String autor_mensaje, String fecha_mensaje) {
         this.mensaje = mensaje;
         this.autor_mensaje = autor_mensaje;
-        this.fecha_mensaje = fecha_mensaje;
     }
     
     
@@ -45,14 +43,6 @@ public class Mensajes {
 
     public void setAutor_mensaje(String autor_mensaje) {
         this.autor_mensaje = autor_mensaje;
-    }
-
-    public String getFecha_mensaje() {
-        return fecha_mensaje;
-    }
-
-    public void setFecha_mensaje(String fecha_mensaje) {
-        this.fecha_mensaje = fecha_mensaje;
     }
     //Fin de los metodos setters and getters
     

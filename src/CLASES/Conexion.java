@@ -10,7 +10,7 @@ public class Conexion {
     Connection con=null;
     
     //Crear las variables para la cadena de conexion    
-    private String url="jdbc:sqlserver://localhost:1433;database=Mensajes_app;integratedSecurity=true;";   
+    private String url="jdbc:sqlserver://localhost:1433;database=MensajesApp;integratedSecurity=true;";   
     private String SQL="";
     
     //Método para establecer la conexion

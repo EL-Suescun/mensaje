@@ -6,10 +6,26 @@
 package CLASES;
 
 //En esta clase se crea el menu que se conecta con la clase MensajesDAO
+
+import java.util.Scanner;
+
 public class mensajesService {
     //Metodo para ingresar el mensaje
     public static void crearMensaje(){
+        Scanner sc = new Scanner(System.in);
         
+        System.out.println("Escribe tu mensaje: ");
+        String Mensaje = sc.nextLine();
+        
+        System.out.println("Tu nombre: ");
+        String Nombre = sc.nextLine();
+        
+        Mensajes registro = new Mensajes();
+        
+        registro.setMensaje(Mensaje);
+        registro.setAutor_mensaje(Nombre);
+        
+        MensajesDAO.crearMensaje(registro);
     }//Cierre del metodo 
     
     //Metodo para listar los mensajes que esten en la base de datos
