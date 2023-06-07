@@ -13,7 +13,7 @@ public class mensajesService {
     //Metodo para ingresar el mensaje
     public static void crearMensaje() {
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.println("Escribe tu mensaje: ");
         String Mensaje = sc.nextLine();
 
@@ -26,17 +26,35 @@ public class mensajesService {
 
     //Metodo para listar los mensajes que esten en la base de datos
     public static void listarMensajes() {
-
+        System.out.println("--------------");
+        System.out.println("LISTA DE MENSAJES");
+        Conexion con = new Conexion();
+        con.getConexion();
+        con.leerMensajes();
     }//Cierre del metodo
 
     //Metodo para borrar un mensaje de la base de datos
     public static void borrarMensajes() {
-
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese el codigo del mensaje: ");
+        int codigo = sc.nextInt();
+        Conexion con = new Conexion();
+        con.getConexion();
+        con.borrarMensaje(codigo);
     }//Cierre del metodo
 
     //Metodo para actualizar un mensaje
     public static void editarMensaje() {
-
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese el codigo del mensaje: ");
+        int codigo = sc.nextInt();
+        System.out.println("Ingrese el nuevo mensaje: ");
+        String Mensaje = sc.next();
+        System.out.println("Ingrese el nuevo autor: ");
+        String Autor = sc.next();
+        Conexion con = new Conexion();
+        con.getConexion();
+        con.actualizarMensaje(codigo, Mensaje, Autor);
     }//Cierre del metodo
 
 }
