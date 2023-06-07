@@ -49,9 +49,9 @@ public class mensajesService {
         System.out.println("Ingrese el codigo del mensaje: ");
         int codigo = sc.nextInt();
         System.out.println("Ingrese el nuevo mensaje: ");
-        String Mensaje = sc.next();
+        String Mensaje = sc.nextLine();
         System.out.println("Ingrese el nuevo autor: ");
-        String Autor = sc.next();
+        String Autor = sc.nextLine();
         Conexion con = new Conexion();
         con.getConexion();
         con.actualizarMensaje(codigo, Mensaje, Autor);
