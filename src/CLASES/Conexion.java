@@ -16,9 +16,6 @@ public class Conexion {
     public Connection getConexion(){
         try{
             con=DriverManager.getConnection(url);
-            if (con!=null) {
-                JOptionPane.showMessageDialog(null, "Conectado");
-            }
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "ERROR: "+ex.getMessage());
         }
