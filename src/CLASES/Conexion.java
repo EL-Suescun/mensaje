@@ -44,7 +44,29 @@ public class Conexion {
 
     //Metodo para ver las tuplas de la base de datos
     public  void leerMensajes() {
-
+        int id = 0;
+        String Mensaje = "";
+        String Nombre = "";
+        try{
+            SQL="SELECT * FROM Mensaje";
+            //Crear la sentencia
+            PreparedStatement ps = con.prepareCall(SQL);
+            //Crear el resultset
+            ResultSet rs = ps.executeQuery();
+            //Traer los datos de la bd  alas cajas de texto
+            while(rs.next()) {
+             id=rs.getInt("id_mensaje");
+             Mensaje=rs.getString("mensaje");
+             Nombre=rs.getString("autor");
+             
+                System.out.println("--------------\nEl Id del Mensaje: "+id+"\n"+
+                        "Mensaje: "+Mensaje+"\nAutor: "+Nombre);
+         }
+            rs.close();
+            ps.close();//Cerrar la sentencia
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "ERROR: "+ex.getMessage());
+        }
     }//Cierre del metodo
 
     //Metodo para eliminar los mensajes
